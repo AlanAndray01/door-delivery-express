@@ -31,7 +31,7 @@ const WhyChooseUsSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.07 }}
-            className="flex items-start gap-4 p-5 rounded-xl hover:bg-muted/50 transition-colors"
+            className="flex items-start gap-4 p-5 rounded-xl hover:bg-muted/50 transition-colors cursor-pointer"
           >
             <div className="w-11 h-11 rounded-lg bg-accent text-accent-foreground flex items-center justify-center shrink-0">
               {r.icon}

@@ -26,7 +26,7 @@ const CitiesSection = () => (
             viewport={{ once: true }}
             transition={{ delay: i * 0.06 }}
             whileHover={{ scale: 1.05 }}
-            className="bg-card border border-border/60 rounded-xl px-6 py-4 shadow-card flex items-center gap-3 cursor-default"
+            className="bg-card border border-border/60 rounded-xl px-6 py-4 shadow-card flex items-center gap-3 cursor-pointer"
           >
             <MapPin size={18} className="text-primary" />
             <span className="font-semibold text-foreground">{city}</span>

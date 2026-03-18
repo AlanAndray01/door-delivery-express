@@ -1,13 +1,23 @@
 import { motion } from "framer-motion";
-import { Send, Phone, MessageCircle } from "lucide-react";
-import { useState } from "react";
+import { Send, Phone } from "lucide-react";
+import { useState, useRef } from "react";
+
+const WhatsAppIcon = ({ size = 24 }: { size?: number }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c0-5.445 4.454-9.888 9.9-9.89 2.64 0 5.122 1.03 6.988 2.898a9.82 9.82 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.895 9.89" />
+  </svg>
+);
 
 const ContactSection = () => {
   const [submitted, setSubmitted] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
+    if (formRef.current) {
+      formRef.current.reset();
+    }
     setTimeout(() => setSubmitted(false), 3000);
   };
 
@@ -27,6 +37,7 @@ const ContactSection = () => {
 
         <div className="grid lg:grid-cols-5 gap-8 max-w-5xl mx-auto">
           <motion.form
+            ref={formRef}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -72,8 +83,8 @@ const ContactSection = () => {
               rel="noopener noreferrer"
               className="flex items-center gap-4 bg-card rounded-2xl shadow-card border border-border/50 p-6 hover:shadow-card-hover transition-shadow"
             >
-              <div className="w-12 h-12 rounded-xl bg-green-500 text-primary-foreground flex items-center justify-center shrink-0">
-                <MessageCircle size={24} />
+              <div className="w-12 h-12 rounded-xl bg-[#25D366] text-white flex items-center justify-center shrink-0">
+                <WhatsAppIcon size={28} />
               </div>
               <div>
                 <p className="font-bold text-foreground">WhatsApp</p>

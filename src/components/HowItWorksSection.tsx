@@ -28,7 +28,7 @@ const HowItWorksSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.15 }}
-            className="text-center"
+            className="text-center cursor-pointer hover:opacity-90 transition-opacity"
           >
             <div className="relative inline-flex">
               <div className="w-20 h-20 rounded-2xl gradient-primary flex items-center justify-center text-primary-foreground shadow-button mx-auto">

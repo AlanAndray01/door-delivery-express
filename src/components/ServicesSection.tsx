@@ -35,7 +35,7 @@ const ServicesSection = () => (
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.08 }}
             whileHover={{ y: -4 }}
-            className="bg-card rounded-2xl p-7 shadow-card hover:shadow-card-hover transition-shadow border border-border/50 group cursor-default"
+            className="bg-card rounded-2xl p-7 shadow-card hover:shadow-card-hover transition-shadow border border-border/50 group cursor-pointer"
           >
             <div className="w-12 h-12 rounded-xl bg-accent text-accent-foreground flex items-center justify-center group-hover:gradient-primary group-hover:text-primary-foreground transition-all">
               {s.icon}
